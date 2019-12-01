@@ -14,11 +14,11 @@
                 calTotal();
             });
             $("#btnAddToList").click(function () {
-                addTheList();
+                addToTheList();
             });
         });
-        /*function addTheList() {
-            var tblItemList = $("#tblItemList").val();
+        function addToTheList() {
+            var tblItemList = $("#tblItemList");
             var Price = $("#txtPrice").val();
             var Discount = $("#txtDiscount").val();
             var Quantity = $("#txtQuantity").val();
@@ -27,7 +27,8 @@
             var Total = (Price * Quantity) - Discount;
             
             var ItemList = "<tr><td hidden>" +
-                ItemId + "</td> <td>" +
+                ItemId +
+                "</td> <td>" +
                 ItemName +
                 "</td> <td>" +
                 parseFloat(Price).toFixed(2) +
@@ -37,7 +38,7 @@
                 parseFloat(Discount).toFixed(2) +
                 "</td> <td>" +
                 parseFloat(Total).toFixed(2) +
-                "</td> <td> <input type ='button' value='Remove' name='remove' class= 'btn btn-danger' onclick='RemoveItem(this)'/> </tr > </tr>";
+                "</td> <td> <input type ='button' value='Remove' name='remove' class= 'btn btn-danger' onclick='RemoveItem(this)'/> </tr></tr>";
 
             tblItemList.append(ItemList);
             RestItem();
@@ -51,7 +52,7 @@
             $("#txtDiscount").val('');
             $("#Item").val(0);
             $("#txtTotalPrice").val("");
-        }*/
+        }
 
         function getItemPrice(itemId) {
             $.ajax({
